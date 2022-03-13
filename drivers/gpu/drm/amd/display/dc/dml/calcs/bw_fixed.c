@@ -189,3 +189,6 @@ struct bw_fixed bw_mul(const struct bw_fixed arg1, const struct bw_fixed arg2)
 	return res;
 }
 
+#ifdef CONFIG_DML_TEST
+#include "../tests/dml_calcs_bw_fixed_test.c"
+#endif
