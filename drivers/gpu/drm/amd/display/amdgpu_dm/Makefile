@@ -43,6 +43,10 @@ ifneq ($(CONFIG_DEBUG_FS),)
 AMDGPUDM += amdgpu_dm_crc.o amdgpu_dm_debugfs.o
 endif
 
+ifdef CONFIG_DRM_AMD_DML_TEST
+AMDGPUDM += tests/dml_calcs_bw_fixed_test.o
+endif
+
 subdir-ccflags-y += -I$(FULL_AMD_DISPLAY_PATH)/dc
 
 AMDGPU_DM = $(addprefix $(AMDDALPATH)/amdgpu_dm/,$(AMDGPUDM))
