@@ -51,6 +51,8 @@ struct bw_fixed {
 #define BW_FIXED_MAX_I32 \
 	(int64_t)((1ULL << (63 - BW_FIXED_BITS_PER_FRACTIONAL_PART)) - 1)
 
+uint64_t abs_i64(int64_t arg);
+
 static inline struct bw_fixed bw_min2(const struct bw_fixed arg1,
 				      const struct bw_fixed arg2)
 {

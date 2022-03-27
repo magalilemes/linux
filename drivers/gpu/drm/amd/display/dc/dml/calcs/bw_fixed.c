@@ -26,7 +26,7 @@
 #include "bw_fixed.h"
 
 
-static uint64_t abs_i64(int64_t arg)
+uint64_t abs_i64(int64_t arg)
 {
 	if (arg >= 0)
 		return (uint64_t)(arg);
