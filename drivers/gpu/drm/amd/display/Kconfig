@@ -54,6 +54,19 @@ config DRM_AMD_SECURE_DISPLAY
             of crc of specific region via debugfs.
             Cooperate with specific DMCU FW.
 
+config DML_KUNIT_TEST
+	tristate "Run all unit tests for DML" if !KUNIT_ALL_TESTS
+	depends on DRM_AMD_DC && KUNIT
+	select DRM_EXPORT_FOR_TESTS if m
+	default KUNIT_ALL_TESTS
+	help
+		Enables unit tests for the Display Mode Library. Only useful for kernel
+		devs running KUnit.
+
+		For more information on KUnit and unit tests in general please refer to
+		the KUnit documentation in Documentation/dev-tools/kunit/.
+
+		If unsure, say N.
 
 config AMD_DAL_BASICS_KUNIT_TEST
 	tristate "Enable unit tests for the 'utils' sub-component of DAL" if !KUNIT_ALL_TESTS
