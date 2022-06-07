@@ -33,6 +33,18 @@ struct bw_fixed {
 	int64_t value;
 };
 
+#define MIN_I64 \
+	((int64_t)(-(1ULL << 63)))
+
+#define MAX_I64 \
+	((int64_t)((1ULL << 63) - 1))
+
+#define FRACTIONAL_PART_MASK \
+	((1ULL << BW_FIXED_BITS_PER_FRACTIONAL_PART) - 1)
+
+#define GET_FRACTIONAL_PART(x) \
+	(FRACTIONAL_PART_MASK & (x))
+
 #define BW_FIXED_MIN_I32 \
 	(int64_t)(-(1LL << (63 - BW_FIXED_BITS_PER_FRACTIONAL_PART)))
 
