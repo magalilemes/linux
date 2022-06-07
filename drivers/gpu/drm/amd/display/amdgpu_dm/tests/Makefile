@@ -3,7 +3,7 @@
 # Makefile for the KUnit Tests for DML
 #
 
-DML_TESTS = display_mode_lib_test.o
+DML_TESTS = calcs/bw_fixed_test.o display_mode_lib_test.o
 
 AMD_DAL_DML_TESTS = $(addprefix $(AMDDALPATH)/amdgpu_dm/tests/,$(DML_TESTS))
 
