@@ -1524,8 +1524,28 @@ void dcn20_cap_soc_clocks(
 
 	dc_assert_fp_enabled();
 
+	dev_info("bb->num_states = %d\n", bb->num_states);
+
+	dev_info("max_clocks.dcfClockInKhz = %i\n", max_clocks.dcfClockInKhz);
+	dev_info("max_clocks.uClockInKhz = %i\n", max_clocks.uClockInKhz);
+	dev_info("max_clocks.fabricClockInKhz = %i\n", max_clocks.fabricClockInKhz);
+	dev_info("max_clocks.displayClockInKhz = %i\n", max_clocks.displayClockInKhz);
+	dev_info("max_clocks.dppClockInKhz = %i\n", max_clocks.dppClockInKhz);
+	dev_info("max_clocks.phyClockInKhz = %i\n", max_clocks.phyClockInKhz);
+	dev_info("max_clocks.socClockInKhz = %i\n", max_clocks.socClockInKhz);
+	dev_info("max_clocks.dscClockInKhz = %i\n", max_clocks.dscClockInKhz);
+
 	// First pass - cap all clocks higher than the reported max
 	for (i = 0; i < bb->num_states; i++) {
+		dev_info("bb->clock_limits[%d].dcfclk_mhz = %lf", i, bb->clock_limits[i].dcfclk_mhz);
+		dev_info("bb->clock_limits[%d].dram_speed_mts = %lf", i, bb->clock_limits[i].dram_speed_mts);
+		dev_info("bb->clock_limits[%d].fabricclk_mhz = %lf", i, bb->clock_limits[i].fabricclk_mhz);
+		dev_info("bb->clock_limits[%d].dispclk_mhz = %lf", i, bb->clock_limits[i].dispclk_mhz);
+		dev_info("bb->clock_limits[%d].dppclk_mhz = %lf", i, bb->clock_limits[i].dppclk_mhz);
+		dev_info("bb->clock_limits[%d].phyclk_mhz = %lf", i, bb->clock_limits[i].phyclk_mhz);
+		dev_info("bb->clock_limits[%d].socclk_mhz = %lf", i, bb->clock_limits[i].socclk_mhz);
+		dev_info("bb->clock_limits[%d].dscclk_mhz = %lf", i, bb->clock_limits[i].dscclk_mhz);
+
 		if ((bb->clock_limits[i].dcfclk_mhz > (max_clocks.dcfClockInKhz / 1000))
 				&& max_clocks.dcfClockInKhz != 0)
 			bb->clock_limits[i].dcfclk_mhz = (max_clocks.dcfClockInKhz / 1000);
