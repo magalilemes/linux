@@ -2390,3 +2390,7 @@ void dcn201_populate_dml_writeback_from_context_fpu(struct dc *dc,
 	}
 
 }
+
+#if IS_ENABLED(CONFIG_DML_KUNIT_TEST)
+#include "../../tests/dc/dml/dcn20/dcn20_fpu_test.c"
+#endif
