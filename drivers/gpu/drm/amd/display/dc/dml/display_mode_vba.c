@@ -1132,3 +1132,6 @@ double CalculateWriteBackDISPCLK(
 	return CalculateWriteBackDISPCLK;
 }
 
+#if IS_ENABLED(CONFIG_DML_KUNIT_TEST)
+#include "../../tests/dc/dml/display_mode_vba_test.c"
+#endif
