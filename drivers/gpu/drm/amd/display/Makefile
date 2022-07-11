@@ -49,6 +49,10 @@ ifdef CONFIG_DRM_AMD_DC_HDCP
 DAL_LIBS += modules/hdcp
 endif
 
+ifdef CONFIG_AMD_DAL_BASICS_KUNIT_TEST
+DAL_LIBS += tests/dc/basics/
+endif
+
 AMD_DAL = $(addsuffix /Makefile, $(addprefix $(FULL_AMD_DISPLAY_PATH)/,$(DAL_LIBS)))
 
 include $(AMD_DAL)
