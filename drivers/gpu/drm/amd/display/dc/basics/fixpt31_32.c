@@ -490,3 +490,8 @@ int dc_fixpt_s4d19(struct fixed31_32 arg)
 	else
 		return ux_dy(arg.value, 4, 19);
 }
+
+#if IS_ENABLED(CONFIG_AMD_DC_BASICS_KUNIT_TEST)
+#include "../../tests/dc/basics/dc_basics_fixpt31_32_test.c"
+#endif
+
