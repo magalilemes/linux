@@ -32,7 +32,7 @@
 	container_of(pool, struct dcn315_resource_pool, base)
 
 extern struct _vcs_dpi_ip_params_st dcn3_15_ip;
-extern struct _vcs_dpi_ip_params_st dcn3_15_soc;
+extern struct _vcs_dpi_soc_bounding_box_st dcn3_15_soc;
 
 struct dcn315_resource_pool {
 	struct resource_pool base;
