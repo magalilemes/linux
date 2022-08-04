@@ -809,3 +809,7 @@ void dc_dmub_srv_log_diagnostic_data(struct dc_dmub_srv *dc_dmub_srv)
 		diag_data.is_cw0_enabled,
 		diag_data.is_cw6_enabled);
 }
+
+#if IS_ENABLED(CONFIG_AMD_DC_BASICS_KUNIT_TEST)
+#include "../tests/dc/dc_dmub_srv_test.c"
+#endif
